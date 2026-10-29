@@ -11,7 +11,7 @@ import {
 const rules = { Easy: [3, 5, 2], Medium: [4, 7, 3], Hard: [5, 9, 3] };
 
 test('uses the current Gemini 3.8 Flash model ID', () => {
-  assert.equal(MODEL_NAME, 'gemini-3-flash');
+  assert.equal(MODEL_NAME, 'gemini-3-flash-preview');
 });
 
 function fixture(difficulty) {
@@ -94,8 +94,8 @@ test('retries transient 503 responses with bounded exponential backoff', async (
   assert.deepEqual(models, [MODEL_NAME, MODEL_NAME, MODEL_NAME]);
   assert.deepEqual(delays, [1_000, 2_000]);
   assert.deepEqual(retryLogs, [
-    '[gemini retry] next_attempt=2/3 model=gemini-3.8-flash delay_ms=1000 reason=transient_failure',
-    '[gemini retry] next_attempt=3/3 model=gemini-3.8-flash delay_ms=2000 reason=transient_failure',
+    '[gemini retry] next_attempt=2/3 model=gemini-3-flash-preview delay_ms=1000 reason=transient_failure',
+    '[gemini retry] next_attempt=3/3 model=gemini-3-flash-preview delay_ms=2000 reason=transient_failure',
   ]);
 });
 

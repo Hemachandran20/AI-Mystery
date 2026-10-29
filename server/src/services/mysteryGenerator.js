@@ -5,7 +5,7 @@ import { logServerError } from '../utils/safeLog.js';
 
 const MAX_ATTEMPTS = 3;
 const RETRY_DELAYS_MS = [1_000, 2_000];
-export const MODEL_NAME = 'gemini-3-flash';
+export const MODEL_NAME = 'gemini-3-flash-preview';
 export const SUPPORTED_FALLBACK_MODELS = Object.freeze(['gemini-3.6-flash']);
 
 const RETRYABLE_HTTP_STATUSES = new Set([408, 429, 500, 502, 503, 504]);
